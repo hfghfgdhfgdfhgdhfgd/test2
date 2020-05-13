@@ -8,12 +8,17 @@ const keyboard = Markup.inlineKeyboard([
   Markup.callbackButton('Delete', 'delete')
 ])
 
-const bot = new Telegraf(token)
-bot.start((ctx) => ctx.reply('Hello'))
-bot.help((ctx) => ctx.reply('Help message'))
-bot.on('message', (ctx) => ctx.telegram.sendCopy(ctx.chat.id, ctx.message, Extra.markup(keyboard)))
-bot.action('delete', ({ deleteMessage }) => deleteMessage())
-bot.launch()
+try {
+  const bot = new Telegraf(token)
+  bot.start((ctx) => ctx.reply('Hello'))
+  bot.help((ctx) => ctx.reply('Help message'))
+  bot.on('message', (ctx) => ctx.telegram.sendCopy(ctx.chat.id, ctx.message, Extra.markup(keyboard)))
+  bot.action('delete', ({ deleteMessage }) => deleteMessage())
+  bot.launch()
+  console.log('SUCSESS')
+} catch (err) {
+  console.log('ERROR');
+}
 
 exports.handler = async (event , context ) => {
   return { 
