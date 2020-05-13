@@ -5,7 +5,7 @@ exports.handler = async (event, context, callback) => {
   try {
     const bot = new Telegraf(process.env.telegramKey)
     await bot.telegram.sendMessage(process.env.notificationChatId, 'регестрация функция включилась ' + 
-    `\`${JSON.stringify(event)}  ${JSON.stringify(identity, context, ' ')}\``);
+    `\`${JSON.stringify(event)}  ${JSON.stringify(context, context, ' ')}\``);
     callback(null, {
       statusCode: 200,
       body: JSON.stringify(
