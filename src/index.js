@@ -8,7 +8,7 @@ exports.handler = async (event , context ) => {
     await bot.telegram.sendMessage(process.env.notificationChatId, 'функция включилась');
     console.log('SUCSESS')
   } catch (err) {
-    console.log('ERROR');
+    console.log('ERROR', JSON.stringify(err));
   }
   return { 
     statusCode : 200 , body : ("We are now split testing!" + token)

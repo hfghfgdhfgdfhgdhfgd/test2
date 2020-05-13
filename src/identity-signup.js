@@ -7,7 +7,7 @@ module.handler = async (event, context, callback) => {
     JSON.stringify(user) + ' ' + JSON.stringify(identity));
     console.log('SUCSESS')
   } catch (err) {
-    console.log('ERROR');
+    console.log('ERROR', JSON.stringify(err));
   }
   return { 
     statusCode : 200
