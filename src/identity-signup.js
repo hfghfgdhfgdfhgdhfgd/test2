@@ -1,4 +1,3 @@
-require('dotenv').config();
 module.handler = async (event, context, callback) => {
   const {identity, user} = context.clientContext;
   try {

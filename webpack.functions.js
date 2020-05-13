@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   module: {
     rules: [
@@ -5,6 +6,11 @@ module.exports = {
         test: /\.mjs$/,
         type: 'javascript/auto',
       }
-    ]
-  }
+    ],
+  },
+  plugins: [
+    new Dotenv({
+      path: "./.env", // Path to .env file (this is the default)
+    }),
+  ]
 }
