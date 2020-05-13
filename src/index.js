@@ -16,18 +16,7 @@ bot.action('delete', ({ deleteMessage }) => deleteMessage())
 bot.launch()
 
 exports.handler = async (event , context ) => {
-  /*try {
-    console.log('user connect');
-    bot.start((ctx) => ctx.reply('Welcome'))
-    bot.help((ctx) => ctx.reply('Send me a sticker'))
-    bot.on('sticker', (ctx) => ctx.reply('👍'))
-    bot.on('message', (ctx) => ctx.reply(ctx.message))
-    bot.hears('hi', (ctx) => ctx.reply('Hey there'))
-    bot.launch()
-  } catch (err) {
-    console.log('ERROR:' + err);
-  }*/
   return { 
-    statusCode : 200 , body : "We are now split testing!"
+    statusCode : 200 , body : "We are now split testing!" + token
   }
 }
