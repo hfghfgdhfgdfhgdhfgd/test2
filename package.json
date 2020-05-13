@@ -1,0 +1,19 @@
+{
+  "name": "tgbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "netlify-lambda build ./",
+    "new": "netlify-lambda serve ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "netlify-lambda": "^1.6.3",
+    "serverless-http": "^2.4.1",
+    "telegraf": "^3.38.0"
+  }
+}
