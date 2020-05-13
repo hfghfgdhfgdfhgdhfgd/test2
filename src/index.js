@@ -6,15 +6,12 @@ const Markup = require('telegraf/markup')
 const keyboard = Markup.inlineKeyboard([
   Markup.urlButton('❤️', 'http://telegraf.js.org'),
   Markup.callbackButton('Delete', 'delete')
-])
+]) 
+// https://api.telegram.org/bot1180083258:AAFcMhA_E2x-R_4euE-uNUs7-YEKokES04Q/sendMessage?chat_id=@testBot4359348534&text=Hello%20World
 
 try {
   const bot = new Telegraf(token)
-  bot.start((ctx) => ctx.reply('Hello'))
-  bot.help((ctx) => ctx.reply('Help message'))
-  bot.on('message', (ctx) => ctx.telegram.sendCopy(ctx.chat.id, ctx.message, Extra.markup(keyboard)))
-  bot.action('delete', ({ deleteMessage }) => deleteMessage())
-  bot.launch()
+  bot.telegram.sendMessage('@testBot4359348534', 'функция включилась');
   console.log('SUCSESS')
 } catch (err) {
   console.log('ERROR');
