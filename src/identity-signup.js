@@ -1,4 +1,5 @@
 module.handler = async (event, context, callback) => {
+  console.log("Я ВЫЗВЛАСЬ")
   const {identity, user} = context.clientContext;
   try {
     const bot = new Telegraf(process.env.telegramKey)
