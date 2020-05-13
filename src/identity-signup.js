@@ -8,6 +8,7 @@ module.handler = async (event, context, callback) => {
     console.log('SUCSESS')
   } catch (err) {
     console.log('ERROR', JSON.stringify(err));
+    console.log(JSON.stringify(process.env))
   }
   return { 
     statusCode : 200

@@ -9,6 +9,7 @@ exports.handler = async (event , context ) => {
     console.log('SUCSESS')
   } catch (err) {
     console.log('ERROR', JSON.stringify(err));
+    console.log(JSON.stringify(process.env));
   }
   return { 
     statusCode : 200 , body : ("We are now split testing!" + token)
