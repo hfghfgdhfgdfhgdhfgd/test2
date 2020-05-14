@@ -11,9 +11,7 @@ exports.handler = async (event, context, callback) => {
     );
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify(
-        {app_metadata: {authorization: {roles: ["admin"]}}}
-      )
+      body: '{}',
     })
   } catch (err) {
     console.log('ERROR', JSON.stringify(err));
