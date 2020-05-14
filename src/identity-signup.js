@@ -1,10 +1,11 @@
 const {Telegraf} = require('telegraf')
 
+const bot = new Telegraf(process.env.telegramKey).catch((error) => {
+  console.log('no connect', error)
+})
+
 exports.handler = async (event, context, callback) => {
-  console.log("Я ВЫЗВЛАСЬ")
   try {
-    const bot = new Telegraf(process.env.telegramKey)
-    const {identity, user} = context.clientContext;
     await bot.telegram.sendMessage(process.env.notificationChatId, 'reg функция включилась ' + 
     `\`${JSON.parse(event.body).user.email}\``
     );
@@ -14,7 +15,6 @@ exports.handler = async (event, context, callback) => {
         {app_metadata: {authorization: {roles: ["admin"]}}}
       )
     })
-    console.log('SUCSESS')
   } catch (err) {
     console.log('ERROR', JSON.stringify(err));
   }
